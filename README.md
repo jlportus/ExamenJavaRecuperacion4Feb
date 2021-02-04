@@ -22,4 +22,9 @@ creo la mano, sera un array de un numero de cartas definido con un constructor c
 
 // me adelanto a la pregunta 4 y cambio el to string de carta para que cuando sea as sota caballo o rey al devolverlo de "as de copas"
 
+## 4a pregunta
 
+en el main creo un String con los palos
+
+creo una baraja española con los palos creados 
+creo el get cartas de la baraja en Baraja para que me de la colleccion de cartas y la imprimo con el forEach
