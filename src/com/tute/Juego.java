@@ -2,6 +2,7 @@ package com.tute;
 
 import es.lanyu.cartas.Baraja;
 import es.lanyu.cartas.Carta;
+import es.lanyu.cartas.FamiliasBarajas;
 
 public class Juego {
 
@@ -12,9 +13,9 @@ public class Juego {
 
 		// ejercicio 4
 		System.out.println("\nBaraja Española:");
-		String[] palosBarajaEspañola = new String[] { "Oros", "Copas", "Espadas", "Bastos" };
-		Baraja barajaEspañolaBaraja = new Baraja(palosBarajaEspañola, 10);
-		imprimirCartas(barajaEspañolaBaraja);
+
+		Baraja barajaEspañola = FamiliasBarajas.BARAJA_ESPAÑOLA;
+		imprimirCartas(barajaEspañola);
 
 		// ejercicio 5
 		System.out.println("\nEjercicio 5");
@@ -22,28 +23,36 @@ public class Juego {
 
 //		barajaEspañolaBaraja.barajar();
 
-		imprimirCartas(barajaEspañolaBaraja);
+		imprimirCartas(barajaEspañola);
 		System.out.println("\nEjercicio 5.b");
-		Carta cartaARobar = new Carta(palosBarajaEspañola[3], 10);
+		Carta cartaARobar = new Carta(FamiliasBarajas.PALOS_BARAJA_ESPAÑOLA[3], 10);
 		System.out.println("Saco la carta " + cartaARobar);
-		barajaEspañolaBaraja.robar(cartaARobar);
-		imprimirCartas(barajaEspañolaBaraja);
+		barajaEspañola.robar(cartaARobar);
+		imprimirCartas(barajaEspañola);
 
 		System.out.println("\nRobo la primera");
-		barajaEspañolaBaraja.robar(null); // robo la primera
-		imprimirCartas(barajaEspañolaBaraja);
+		barajaEspañola.robar(null); // robo la primera
+		imprimirCartas(barajaEspañola);
 
 		System.out.println("\nBaraja vacia");
-		barajaEspañolaBaraja.getCartasDeLaBaraja().clear();
-		barajaEspañolaBaraja.robar(null); // robo la primera sabiendo que no hay cartas
-		imprimirCartas(barajaEspañolaBaraja);
+		barajaEspañola.getCartasDeLaBaraja().clear();
+		barajaEspañola.robar(null); // robo la primera sabiendo que no hay cartas
+		imprimirCartas(barajaEspañola);
 
-		System.out.println("\n¿contiene la carta " + cartaARobar +"?");
-		barajaEspañolaBaraja = new Baraja(palosBarajaEspañola, 10);
-		System.out.println(barajaEspañolaBaraja.contieneCarta(cartaARobar));
-	
-		
-		
+		System.out.println("\n¿contiene la carta " + cartaARobar + "?");
+		barajaEspañola = new Baraja(FamiliasBarajas.PALOS_BARAJA_ESPAÑOLA, 10);
+		System.out.println(barajaEspañola.contieneCarta(cartaARobar));
+
+		// ejercicio 6
+		System.out.println("\nEjercicio 6");
+		barajaEspañola.barajar();
+		System.out.println("\nImprimo cartas barajadas");
+		imprimirCartas(barajaEspañola);
+
+		barajaEspañola.getCartasDeLaBaraja().sort(null);
+		System.out.println("\nImprimo cartas ordenadas");
+		imprimirCartas(barajaEspañola);
+
 	}
 
 	public static void imprimirCartas(Baraja baraja) {

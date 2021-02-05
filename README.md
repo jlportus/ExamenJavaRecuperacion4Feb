@@ -39,4 +39,14 @@ robar: comprueba si el mazo esta vacio -> si: devuelve null
 si la carta que le paso hay una igual en el mazo, me la devuelve y saca la carta del mazo
 si no esta la carta, me saca la  primera
 
-contiene carta: con el lIst.contains
+contiene carta: con el list.contains
+
+## 6a pregunta
+
+saco a una clase abstracta las caracteristicas de la baraja española, los palos y los numeros de cartas, para centralizarlos
+
+en carta implemento la interfaz comparable<Cartas> y le pongo el metodo compareTo
+1 comparo el string del palo de la carta con la otra ( como lo haga la maquina)// me dice que el orden de los palos es indiferente
+2 meto en el compare un If, si me da el mismo palo la diferencia me dara 0, por lo tanto entro a comparar el numero de la carta a pelo restandolos.
+
+mezclo y ordeno en el main

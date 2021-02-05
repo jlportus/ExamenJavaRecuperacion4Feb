@@ -1,13 +1,12 @@
 package es.lanyu.cartas;
 
-public class Carta {
+public class Carta implements Comparable<Carta> {
 
 	private String palo;
 	private int numeroCarta;
 
-	public Carta(String palo, int numeroCarta) {
-		this.palo = palo;
-		this.numeroCarta = numeroCarta;
+	public String getPalo() {
+		return palo;
 	}
 
 	public String getNumeroCarta() {
@@ -22,12 +21,16 @@ public class Carta {
 
 		} else if (this.numeroCarta == 10) {
 			numeroCarta = "Rey";
-		} else numeroCarta += this.numeroCarta;
+		} else
+			numeroCarta += this.numeroCarta;
 		return numeroCarta;
 	}
 
-	
-	
+	public Carta(String palo, int numeroCarta) {
+		this.palo = palo;
+		this.numeroCarta = numeroCarta;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -60,4 +63,14 @@ public class Carta {
 	public String toString() {
 		return getNumeroCarta() + " de " + palo;
 	}
+
+	@Override
+	public int compareTo(Carta carta) {
+		int diferencia = this.palo.compareTo(carta.palo);
+		if (diferencia == 0) {
+			diferencia = this.numeroCarta - carta.numeroCarta;
+		}
+		return diferencia;
+	}
+
 }

@@ -11,6 +11,10 @@ public class Baraja implements Crupier{
 	private int numeroCartasPalo; // numero de cartas por cada palo, 10 en baraja española
 	private List<Carta> cartasDeLaBaraja;
 
+	public String[] getPalos() {
+		return palos;
+	}
+	
 	public List<?> getCartasDeLaBaraja() {
 		return cartasDeLaBaraja;
 	}
