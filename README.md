@@ -28,3 +28,15 @@ en el main creo un String con los palos
 
 creo una baraja española con los palos creados 
 creo el get cartas de la baraja en Baraja para que me de la colleccion de cartas y la imprimo con el forEach
+
+## 5a Pregunta
+
+en la interfaz crupier creo los metodos por defecto
+
+barajar: coje las cartas de la baraja con el metodo getCartas que implementan los mazos y le hace un shufle
+
+robar: comprueba si el mazo esta vacio -> si: devuelve null
+si la carta que le paso hay una igual en el mazo, me la devuelve y saca la carta del mazo
+si no esta la carta, me saca la  primera
+
+contiene carta: con el lIst.contains

@@ -9,10 +9,10 @@ public class Baraja implements Crupier{
 
 	private String[] palos; // por ej: cuatro palos en la baraja española
 	private int numeroCartasPalo; // numero de cartas por cada palo, 10 en baraja española
-	private static Collection<Carta> cartasDeLaBaraja;
+	private List<Carta> cartasDeLaBaraja;
 
 	public List<?> getCartasDeLaBaraja() {
-		return (List<?>) cartasDeLaBaraja;
+		return cartasDeLaBaraja;
 	}
 	
 	public Baraja(String[] palos, int numeroCartasPalo) {
@@ -21,7 +21,7 @@ public class Baraja implements Crupier{
 		this.cartasDeLaBaraja = new ArrayList<>();
 		for (int i = 0; i < palos.length; i++) {
 			for (int j = 1; j <= numeroCartasPalo; j++) {
-				this.cartasDeLaBaraja.add(new Carta(palos[i], j));
+				cartasDeLaBaraja.add(new Carta(palos[i], j));
 			}
 		}
 	}

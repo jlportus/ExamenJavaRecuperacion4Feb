@@ -1,10 +1,9 @@
 package es.lanyu.cartas;
-
-import java.util.List;
+import java.util.*;
 
 public class Mano implements Crupier{
 
-	private Carta[] mano; //cartas concretas del jugador en el momento
+	private List<Carta> mano; //cartas concretas del jugador en el momento
 	private int cartasMano; //numero de cartas por jugador en la partida
 	
 	public void setCartasMano(int cartasMano) {
@@ -14,13 +13,12 @@ public class Mano implements Crupier{
 		return cartasMano;
 	}
 	
-	public Mano(int n) {
-		setCartasMano(n);
-		mano = new Carta[getCartasMano()];
+	public Mano() {
+		this.mano = new ArrayList<>();
 	}
+	
 	@Override
 	public List<?> getCartasDeLaBaraja() {
-		
-		return null;
+		return mano;
 	}
 }
