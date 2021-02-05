@@ -1,6 +1,8 @@
 package es.lanyu.cartas;
 
-public class Carta implements Comparable<Carta> {
+import java.util.Comparator;
+
+public class Carta implements Carteable, Comparable<Carteable>, Comparator<Carteable> {
 
 	private String palo;
 	private int numeroCarta;
@@ -9,7 +11,11 @@ public class Carta implements Comparable<Carta> {
 		return palo;
 	}
 
-	public String getNumeroCarta() {
+	public int getNumeroCarta() {
+		return numeroCarta;
+	}
+
+	public String getNumeroString() {
 		String numeroCarta = "";
 		if (this.numeroCarta == 1) {
 			numeroCarta = "As";
@@ -61,16 +67,24 @@ public class Carta implements Comparable<Carta> {
 
 	@Override
 	public String toString() {
-		return getNumeroCarta() + " de " + palo;
+		return getNumeroString() + " de " + palo;
 	}
 
 	@Override
-	public int compareTo(Carta carta) {
-		int diferencia = this.palo.compareTo(carta.palo);
+	public int compareTo(Carteable carta) {
+		int diferencia = this.palo.compareTo(carta.getPalo());
 		if (diferencia == 0) {
-			diferencia = this.numeroCarta - carta.numeroCarta;
+			diferencia = this.numeroCarta - carta.getNumeroCarta();
 		}
 		return diferencia;
 	}
+
+	@Override
+	public int compare(Carteable arg0, Carteable arg1) {
+		
+		return 0;
+	}
+
+	
 
 }

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class Baraja implements Crupier{
+public class Baraja implements Repartidor {
 
 	private String[] palos; // por ej: cuatro palos en la baraja española
 	private int numeroCartasPalo; // numero de cartas por cada palo, 10 en baraja española
@@ -14,11 +14,11 @@ public class Baraja implements Crupier{
 	public String[] getPalos() {
 		return palos;
 	}
-	
+
 	public List<?> getCartasDeLaBaraja() {
 		return cartasDeLaBaraja;
 	}
-	
+
 	public Baraja(String[] palos, int numeroCartasPalo) {
 		this.numeroCartasPalo = numeroCartasPalo;
 		this.palos = palos;
@@ -29,6 +29,5 @@ public class Baraja implements Crupier{
 			}
 		}
 	}
-
 
 }

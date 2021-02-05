@@ -53,6 +53,9 @@ public class Juego {
 		System.out.println("\nImprimo cartas ordenadas");
 		imprimirCartas(barajaEspañola);
 
+		//ejercicio 7
+		System.out.println("\nEjercicio 7");
+		
 	}
 
 	public static void imprimirCartas(Baraja baraja) {
