@@ -1,6 +1,7 @@
 package com.tute;
 
 import es.lanyu.cartas.Baraja;
+import es.lanyu.cartas.BarajaExterna;
 import es.lanyu.cartas.Carta;
 import es.lanyu.cartas.FamiliasBarajas;
 
@@ -55,7 +56,7 @@ public class Juego {
 
 		//ejercicio 7
 		System.out.println("\nEjercicio 7");
-		
+		Baraja barajaAmericanaBaraja = new BarajaExterna();
 	}
 
 	public static void imprimirCartas(Baraja baraja) {
